@@ -5,7 +5,7 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, addre
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td>
-                    <img src="DARO-SEAL-EVERGREEN.png" alt="DARO Logo">
+                    <img style="max-width: 100px;" src="DARO-SEAL-EVERGREEN.png" alt="DARO Logo">
                 </td>
                 <td>
                     <h1>${nameWithPronouns}</h1>
@@ -64,38 +64,33 @@ countrySelect.addEventListener('change', updateSignatureOutput);
 // Initial update of signature output when page loads
 updateSignatureOutput();
 
-// Function to copy signature HTML table contents to clipboard
+// Function to copy signature HTML to clipboard
 function copySignatureToClipboard() {
-    const signatureTable = document.querySelector('#signatureOutput table');
+    // Get the signature output container
+    const signatureOutput = document.getElementById('signatureOutput');
 
-    if (signatureTable) {
-        // Create a range object to select the signature table contents
-        const range = document.createRange();
-        range.selectNodeContents(signatureTable);
+    // Create a range and selection for the signature output container
+    const range = document.createRange();
+    range.selectNode(signatureOutput);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
 
-        // Select the content inside the range
-        window.getSelection().removeAllRanges(); // Clear any existing selection
-        window.getSelection().addRange(range);
-
-        // Execute the copy command
-        document.execCommand('copy');
-
-        // Clear the selection (optional)
-        window.getSelection().removeAllRanges();
-
-        // Change button text to indicate successful copy
+    // Copy the selection to the clipboard
+    try {
+        const successful = document.execCommand('copy');
+        const message = successful ? 'Signature Copied!' : 'Copy failed. Please try again.';
         const copyButton = document.getElementById('copySignatureButton');
-        copyButton.textContent = 'Signature Copied';
-
-        // Reset button text after a brief delay (e.g., 2 seconds)
+        copyButton.textContent = message;
         setTimeout(() => {
             copyButton.textContent = 'Copy Signature to Clipboard';
-        }, 2000); // Change back to original text after 2 seconds
-    } else {
-        // Handle error if signature table is not found
-        console.error('Signature table not found!');
-        alert('Error: Signature table not found. Please try again.');
+        }, 2000); // Reset button text after 2 seconds
+    } catch (err) {
+        console.error('Copy failed:', err);
+        alert('Copy failed. Please try again.');
     }
+
+    // Clear the selection
+    window.getSelection().removeAllRanges();
 }
 
 // Event listener for "Copy to Clipboard" button
