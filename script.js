@@ -57,6 +57,10 @@ inputFields.forEach(input => {
     input.addEventListener('input', updateSignatureOutput);
 });
 
+// Add event listener for the country dropdown (select)
+const countrySelect = document.getElementById('country');
+countrySelect.addEventListener('change', updateSignatureOutput);
+
 // Initial update of signature output when page loads
 updateSignatureOutput();
 
