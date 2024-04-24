@@ -1,5 +1,5 @@
 // Function to generate the email signature HTML
-function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land) {
+function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land, seperator) {
     const nameWithPronouns = pronouns ? `${fullName} (${pronouns})` : fullName;
     return `
         <table cellspacing="0" cellpadding="0">
@@ -11,7 +11,7 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, addre
                     <h1>${nameWithPronouns}</h1>
                     <h2>${jobTitle} at <a href="https://wearedaro.com">DARO</a></h2>
                     <hr>
-                    <h3>${phone} | <a href="mailto:${email}">${email}</a></h3>
+                    <h3>${phone}${seperator}<a href="mailto:${email}">${email}</a></h3>
                     <br>
                     <h3>${address}</h3>
                     <p><i class="small-text">${land}</i></p>
@@ -45,7 +45,14 @@ function updateSignatureOutput() {
         land = '';
     }
 
-    const signatureHTML = generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land);
+    let seperator;
+
+    if (phone && email) {
+        seperator = " | ";
+    } else {
+        seperator = "";
+    }
+    const signatureHTML = generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land, seperator);
 
     // Display the updated signature HTML
     document.getElementById('signatureOutput').innerHTML = signatureHTML;
