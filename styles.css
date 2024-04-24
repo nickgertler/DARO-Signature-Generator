@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    background-color: #E6ECF7;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Set full viewport height */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.normal {
+    text-align: center;
+    padding-bottom: 1em;
+    color: #333;
+    text-decoration: solid black 1px;
+    font-size: 2em;
+}
+
+.horizontal-layout {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.form-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 10px;
+}
+
+/* Style for form labels */
+.form-section label {
+    display: block; /* Display labels as block elements */
+    font-weight: bold;
+    margin-bottom: 8px; /* Add space below each label */
+}
+
+/* Style for form inputs */
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.form-section select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="%23333"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>'); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    background-size: 16px 16px;
+    padding-right: 30px; /* Add space for the arrow icon */
+}
+
+.output-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 10px; /* Add spacing between sections */
+}
+
+#signatureOutput {
+    margin-bottom: 10px;
+}
+
+#copySignatureButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #17381B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add more space above the button */
+}
+
+
+#copySignatureButton:hover {
+    background-color: #839E84;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    min-width: 50%;
+    max-width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #17381B;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #839E84;
+}
+
+table {
+    max-width: 100%;
+    table-layout: fixed;
+}
+td {
+    padding-right: 10px;
+    vertical-align: middle;
+    font-family: 'DM Sans', sans-serif;
+    color: #17381B; /* Green color for the text */
+}
+img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    margin: 0 auto; /* Center image horizontally */
+}
+a:link, a:visited {
+    color: #17381B;
+}
+
+a:hover, a:active {
+    color: #DE943B;
+}
+
+hr {
+    height: 2px;
+    background-color: #17381B;
+    border: none;
+}
+
+h1, h2, h3, p {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+}
+
+h1 {
+    font-size: 1.35em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: .9em;
+}
+
+p {
+    font-size: .9em;
+}
+
+.small-text {
+    font-size: .8em;
+}

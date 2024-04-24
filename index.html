@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARO Email Signature Generator</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+
+    <div class="horizontal-layout">
+        <!-- Form section (left side) -->
+        <div class="form-section">
+            <form id="signatureForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required><br>
+
+                <label for="pronouns">Pronouns (optional):</label>
+                <input type="text" id="pronouns" name="pronouns"><br> <!-- Optional Pronouns field -->
+
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle" required><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="Canada">Canada</option>
+                    <option value="US">US</option>
+                </select>
+            </form>
+
+        </div>
+
+        <!-- Signature output section (right side) -->
+        <div class="output-section">
+            <div id="signatureOutput"></div>
+            <button id="copySignatureButton">Copy Signature to Clipboard</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- JS script for handling form submission, live update, and clipboard copying -->
+</body>
+</html>
