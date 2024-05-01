@@ -20,14 +20,6 @@ body {
     padding: 20px;
 }
 
-.normal {
-    text-align: center;
-    padding-bottom: 1em;
-    color: #333;
-    text-decoration: solid black 1px;
-    font-size: 2em;
-}
-
 .horizontal-layout {
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -166,21 +158,21 @@ h1, h2, h3, p {
 }
 
 h1 {
-    font-size: 1.35em;
+    font-size: 16px;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 14px;
 }
 
 h3 {
-    font-size: .9em;
+    font-size: 12px;
 }
 
 p {
-    font-size: .9em;
+    font-size: 12px;
 }
 
 .small-text {
-    font-size: .8em;
+    font-size: 10px;
 }
