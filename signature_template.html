@@ -1,0 +1,73 @@
+<style>
+    table {
+        max-width: 100%;
+        table-layout: fixed;
+    }
+    td {
+        padding-right: 10px;
+        vertical-align: middle;
+        font-family: 'DM Sans', sans-serif;
+        color: #17381B; /* Green color for the text */
+    }
+    img {
+        width: 100px;
+        height: auto;
+        display: inline-block;
+        margin: 0 auto; /* Center image horizontally */
+    }
+    a:link, a:visited {
+        color: #17381B;
+    }
+
+    a:hover, a:active {
+        color: #DE943B;
+    }
+
+    hr {
+        height: 2px;
+        background-color: #17381B;
+        border: none;
+    }
+
+    h1, h2, h3, p {
+        margin-block-end: 0px;
+        margin-block-start: 0px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .small-text {
+        font-size: 10px;
+    }
+</style>
+
+<table cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <img style="max-width: 100px;" src="DARO-SEAL-EVERGREEN.png" alt="DARO Logo">
+        </td>
+        <td>
+            <h1>{FirstName} {LastName}</h1>
+            <h2>{jobTitle} at <a href="https://wearedaro.com">DARO</a></h2>
+            <hr>
+            <h3>{phone} | <a href="mailto:{email}">{email}</a></h3>
+            <br>
+            <h3>1892 Rue Payette, Montréal, QC H3J 1P3</h3>
+            <p><i class="small-text">DARO is located on unceded Kanien’kehá:ka territory.\<br\>DARO est situé sur le territoire traditionnel non cédé Kanien\'kehá:ka.</i></p>
+        </td>
+    </tr>
+</table>

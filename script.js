@@ -5,7 +5,7 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, addre
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td>
-                    <img style="max-width: 100px;" src="DARO-SEAL-EVERGREEN.png" alt="DARO Logo">
+                    <img style="max-width: 100px;" src="DARO_Seal_Evergreen_Web.png" alt="DARO Logo">
                 </td>
                 <td>
                     <h1>${nameWithPronouns}</h1>
