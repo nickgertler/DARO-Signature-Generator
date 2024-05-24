@@ -34,16 +34,7 @@ function updateSignatureOutput() {
     const pronouns = document.getElementById('pronouns').value;
     const canAddress = '1892 Rue Payette, Montréal, Quebec H3J 1P3';
     const usAddress = '24285 Katy Freeway, Suite 300, Katy, Texas 77494';
-
-    const selectedCountry = document.getElementById('country').value;
-
-    // Update address based on selected country
-    let land;
-    if (selectedCountry === 'Canada') {
-        land = 'DARO is located on unceded Kanien’kehá:ka territory.\<br\>DARO est situé sur le territoire traditionnel non cédé Kanien\'kehá:ka.'
-    } else {
-        land = '';
-    }
+    const land = 'DARO is located on unceded Kanien’kehá:ka territory.\<br\>DARO est situé sur le territoire traditionnel non cédé Kanien\'kehá:ka.';
 
     let seperator;
 
@@ -63,10 +54,6 @@ const inputFields = document.querySelectorAll('#signatureForm input');
 inputFields.forEach(input => {
     input.addEventListener('input', updateSignatureOutput);
 });
-
-// Add event listener for the country dropdown (select)
-const countrySelect = document.getElementById('country');
-countrySelect.addEventListener('change', updateSignatureOutput);
 
 // Initial update of signature output when page loads
 updateSignatureOutput();
