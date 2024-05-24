@@ -1,5 +1,5 @@
 // Function to generate the email signature HTML
-function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land, seperator) {
+function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, canAddress, usAddress, land, seperator) {
     const nameWithPronouns = pronouns ? `${fullName} (${pronouns})` : fullName;
     return `
         <table cellspacing="0" cellpadding="0">
@@ -13,8 +13,10 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, addre
                     <hr>
                     <h3>${phone}${seperator}<a href="mailto:${email}">${email}</a></h3>
                     <br>
-                    <h3>${address}</h3>
+                    <h3>${canAddress}</h3>
                     <p><i class="small-text">${land}</i></p>
+                    <br>
+                    <h3>${usAddress}</h3>
                 </td>
             </tr>
         </table>
@@ -28,20 +30,16 @@ function updateSignatureOutput() {
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
     const pronouns = document.getElementById('pronouns').value;
+    const canAddress = '1892 Rue Payette, Montréal, QC H3J 1P3 (Canada)';
+    const usAddress = '24285 Katy Freeway, Suite 300, Katy, Texas 77494 (US)';
 
     const selectedCountry = document.getElementById('country').value;
 
     // Update address based on selected country
-    let address;
     let land;
     if (selectedCountry === 'Canada') {
-        address = '1892 Rue Payette, Montréal, QC H3J 1P3';
         land = 'DARO is located on unceded Kanien’kehá:ka territory.\<br\>DARO est situé sur le territoire traditionnel non cédé Kanien\'kehá:ka.'
-    } else if (selectedCountry === 'US') {
-        address = '24285 Katy Freeway, Suite 300, Katy, Texas 77494';
-        land = ''
     } else {
-        address = '';
         land = '';
     }
 
@@ -52,7 +50,7 @@ function updateSignatureOutput() {
     } else {
         seperator = "";
     }
-    const signatureHTML = generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, address, land, seperator);
+    const signatureHTML = generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, canAddress, usAddress, land, seperator);
 
     // Display the updated signature HTML
     document.getElementById('signatureOutput').innerHTML = signatureHTML;
