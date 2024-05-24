@@ -132,6 +132,10 @@ td {
     font-family: 'DM Sans', sans-serif;
     color: #17381B; /* Green color for the text */
 }
+
+.nestedTable tr td  {
+    vertical-align: top;
+}
 img {
     width: 100px;
     height: auto;
@@ -175,4 +179,8 @@ p {
 
 .small-text {
     font-size: 10px;
+}
+
+.underline {
+   text-decoration: underline !important; 
 }

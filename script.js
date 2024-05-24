@@ -13,10 +13,20 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, canAd
                     <hr>
                     <h3>${phone}${seperator}<a href="mailto:${email}">${email}</a></h3>
                     <br>
-                    <h3>${canAddress}</h3>
+
+                    <table class="nestedTable">
+                        <tr>
+                            <td>
+                            <h3 class="underline">Canadian Office</h3>
+                            <h3>${canAddress}</h3>
+                            </td>
+                            <td>
+                            <h3 class="underline">US Office</h3>
+                            <h3>${usAddress}</h3>
+                            </td>
+                        </tr>
+                    </table>
                     <p><i class="small-text">${land}</i></p>
-                    <br>
-                    <h3>${usAddress}</h3>
                 </td>
             </tr>
         </table>
@@ -30,8 +40,8 @@ function updateSignatureOutput() {
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
     const pronouns = document.getElementById('pronouns').value;
-    const canAddress = '1892 Rue Payette, Montréal, QC H3J 1P3 (Canada)';
-    const usAddress = '24285 Katy Freeway, Suite 300, Katy, Texas 77494 (US)';
+    const canAddress = '1892 Rue Payette\<br\>Montréal, QC\<br\>H3J 1P3';
+    const usAddress = '24285 Katy Freeway\<br\>Suite 300\<br\>Katy, Texas \<br\>77494';
 
     const selectedCountry = document.getElementById('country').value;
 
