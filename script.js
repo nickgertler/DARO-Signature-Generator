@@ -13,11 +13,11 @@ function generateSignatureHTML(fullName, pronouns, jobTitle, phone, email, canAd
                     <hr>
                     <h3>${phone}${seperator}<a href="mailto:${email}">${email}</a></h3>
                     <br>
-                    <h3 class="underline">Canadian Office</h3>
+                    <h3 style="text-decoration: underline !important;">Canadian Office</h3>
                     <h3>${canAddress}</h3>
                     <p><i class="small-text">${land}</i></p>
                     <br>
-                    <h3 class="underline">US Office</h3>
+                    <h3 style="text-decoration: underline !important;">US Office</h3>
                     <h3>${usAddress}</h3>
                 </td>
             </tr>
